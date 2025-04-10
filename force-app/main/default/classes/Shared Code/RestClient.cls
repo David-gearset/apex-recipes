@@ -111,9 +111,7 @@ public virtual class RestClient {
         } else {
             apiRequest.setMethod(String.valueOf(method));
         }
-        Map<String, String> functionalHeaders = (headers != null)
-            ? headers
-            : RestClient.defaultHeaders;
+        Map<String, String> functionalHeaders = headers ?? RestClient.defaultHeaders;
         for (String header : functionalHeaders.keySet()) {
             apiRequest.setHeader(header, functionalHeaders.get(header));
         }
